@@ -1,0 +1,124 @@
+
+      /* 1. Trang trí nền và Font chữ */
+        body {
+            background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%); /* Nền xanh chuyển màu rất đẹp */
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 2. Tiêu đề chính trang trí lộng lẫy */
+        header {
+            text-align: center;
+            padding: 40px;
+            color: #006064;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            border-bottom: 5px double #00bcd4;
+            display: inline-block;
+        }
+
+        /* 3. Khung chứa 3 mục chính */
+        .bao-tuong-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* 4. Trang trí từng cột môn học */
+        .mon-hoc-box {
+            background: rgba(255, 255, 255, 0.9); /* Màu trắng trong suốt nhẹ */
+            border-radius: 20px;
+            padding: 25px;
+            width: 300px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Đổ bóng mịn */
+            border: 2px solid #ffffff;
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .mon-hoc-box:hover {
+            transform: translateY(-15px) rotate(2deg); /* Rê chuột vào là xoay nhẹ và bay lên */
+            background: #ffffff;
+        }
+
+        /* 5. Tiêu đề môn học */
+        .mon-hoc-box h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        /* Màu riêng cho từng tiêu đề */
+        .toan h2 { background-color: #ff5252; }
+        .hoa h2 { background-color: #4caf50; }
+        .sinh h2 { background-color: #ff9800; }
+
+        /* 6. KHUNG CHỀN ẢNH - Điểm nhấn của bạn đây */
+        .khung-anh {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            border: 3px dashed #bbb; /* Viền nét đứt tạo cảm giác khung ảnh dán tường */
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Ảnh to quá sẽ tự cắt gọn vào khung */
+            position: relative;
+        }
+
+        .khung-anh img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ảnh sẽ tự lấp đầy khung mà không bị méo */
+        }
+
+        .khung-anh::after {
+            color: #999;
+            font-style: italic;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .khung-anh img + span { display: none; } /* Ẩn chữ khi đã có ảnh */
+
+/* Trang trí hai thanh lề trắng */
+.thanh-le {
+    position: fixed; /* Cố định hai bên */
+    top: 0;
+    width: 150px; /* Độ rộng của thanh */
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Màu trắng hơi trong suốt */
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Đổ bóng nhẹ cho sang */
+    z-index: 10; /* Nổi lên trên các hình khối trang trí nền */
+}
+
+.le-trai {
+    left: 0;
+    border-right: 3px solid #00bcd4; /* Thêm đường kẻ xanh bên phải thanh trái */
+}
+
+.le-phai {
+    right: 0;
+    border-left: 3px solid #00bcd4; /* Thêm đường kẻ xanh bên trái thanh phải */
+}
+
+/* Đảm bảo nội dung không bị hai cái thanh này che mất */
+body {
+    padding-left: 70px;
+    padding-right: 70px;
+}
